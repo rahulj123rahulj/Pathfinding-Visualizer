@@ -1,0 +1,27 @@
+.node{
+    height: 25px;
+    width: 25px;
+    outline: 1px solid rgb(175, 216, 248);
+    display: inline-block;
+}
+
+
+.node-start{
+    background-color: aqua;
+}
+
+.node-finish{
+    background-color: burlywood;
+}
+
+.node-wall{
+    background-color: black;
+}
+
+.node-visited{
+    background-color: aquamarine;
+}
+
+.node-shortest-path{
+    background-color: blueviolet;
+}
