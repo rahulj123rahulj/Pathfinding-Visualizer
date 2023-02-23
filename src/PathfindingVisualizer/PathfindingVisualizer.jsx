@@ -77,7 +77,17 @@ const PathfindingVisualizer=({vis,algo})=> {
     for (let i = 0; i < nodesInShortestPathOrder.length; i++) {
       setTimeout(() => {
         const node = nodesInShortestPathOrder[i];
-        document.getElementById(`node-${node.row}-${node.col}`).className='node node-shortest-path';
+        const temp=document.getElementById(`node-${node.row}-${node.col}`)
+        if(!node.isStart || !node.isFinish)
+          temp.className='node node-shortest-path';
+        if(node.isStart){
+          temp.classList.remove('node-shortest-path')
+          temp.classList.add('node-start')
+        }
+        if(node.isFinish){
+          temp.classList.remove('node-shortest-path')
+          temp.classList.add('node-finish')
+        }
       }, 50 * i);
     }
   }
@@ -93,6 +103,7 @@ const PathfindingVisualizer=({vis,algo})=> {
       }
       setTimeout(() => {
         const node = visitedNodesInOrder[i];
+        if(!node.isStart && !node.isFinish)
         document.getElementById(`node-${node.row}-${node.col}`).className='node node-visited';
       }, 10 * i);
     }
@@ -150,7 +161,7 @@ const PathfindingVisualizer=({vis,algo})=> {
             <div className="grid">
           {grid.map((i, rowIdx) => {
             return (
-              <div key={rowIdx}>
+              <div key={rowIdx} style={{height:"25px"}}>
                 {i.map((node, nodeIdx) => {
                   const {row, col, isFinish, isStart, isWall} = node;
                   return (
