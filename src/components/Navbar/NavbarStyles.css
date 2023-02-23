@@ -10,7 +10,7 @@
     height: 80px;
     border-radius: 13px;
     position: fixed;
-    top: 20px;
+    top: 5px;
     left: 50%;
     transform: translate(-50%);
 }

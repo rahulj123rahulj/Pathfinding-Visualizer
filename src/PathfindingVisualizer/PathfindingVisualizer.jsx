@@ -153,11 +153,6 @@ const PathfindingVisualizer=({vis,algo})=> {
     return (
         
         <><div className='visualizer'>
-          <div className="header">
-              <div>
-                <button onClick={visualizeDijkstra}>Visualize</button>
-              </div>
-          </div>
             <div className="grid">
           {grid.map((i, rowIdx) => {
             return (
