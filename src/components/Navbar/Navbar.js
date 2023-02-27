@@ -1,5 +1,4 @@
 import { useState} from "react";
-import { MenuData } from "./MenuData.js";
 import "./NavbarStyles.css";
 export const Navbar=({setVis,algo,setAlgo})=>{
     const [clicked,setClicked]=useState(false);
